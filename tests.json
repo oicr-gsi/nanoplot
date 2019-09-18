@@ -1,0 +1,45 @@
+{
+  "defaults": {
+    "description": "nanoplot workflow test",
+    "metrics_calculate": "calculate.sh",
+    "metrics_compare": "compare.sh",
+    "output_metrics_dir": "/.mounts/labs/PDE/data/RegressionTests/nanoplot",
+    "parameters": {
+      "wdl_options": {
+        "write_to_cache": false,
+        "read_from_cache": false
+      }
+    }
+  },
+  "tests": [
+    {
+      "id": "nanoplotTest",
+      "parameters": {
+        "wdl_inputs": {
+          "nanoplot.fastqFilePath": "/.mounts/labs/gsiprojects/gsi/ONT_PIPE/output/fastq_runid_fffed01d190f277f93f23e0d7051ae69bc971cd7_0.fastq",
+          "nanoplot.outputPath" : "/.mounts/labs/gsiprojects/gsi/ONT_PIPE/nanoplot_output"
+        }
+      }
+    },
+    {
+      "id": "OverrideNanoplotPath",
+      "parameters": {
+        "wdl_inputs": {
+          "nanoplot.fastqFilePath": "/.mounts/labs/gsiprojects/gsi/ONT_PIPE/output/fastq_runid_fffed01d190f277f93f23e0d7051ae69bc971cd7_0.fastq",
+          "nanoplot.outputPath" : "/.mounts/labs/gsiprojects/gsi/ONT_PIPE/nanoplot_output",
+          "nanoplot.generateReports.NanoPlot": "/.mounts/labs/ont/software/NanoPlot/bin/NanoPlot"
+        }
+      }
+    },
+    {
+      "id": "OverrideNanoplotModule",
+      "parameters": {
+        "wdl_inputs": {
+          "nanoplot.fastqFilePath": "/.mounts/labs/gsiprojects/gsi/ONT_PIPE/output/fastq_runid_fffed01d190f277f93f23e0d7051ae69bc971cd7_0.fastq",
+          "nanoplot.outputPath" : "/.mounts/labs/gsiprojects/gsi/ONT_PIPE/nanoplot_output",
+          "nanoplot.generateReports.modules": "nanoplot"
+        }
+      }
+    }
+  ]
+}
