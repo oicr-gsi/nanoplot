@@ -2,13 +2,11 @@ version 1.0
 
 workflow nanoplot {
     input {
-        String fastqFilePath
-        String outputPath
+        String summaryFilePath
     }
     call generateReports {
         input:
-            fastqFilePath = fastqFilePath,
-            outputPath = outputPath
+            summaryFilePath = summaryFilePath,
     }
     output {
         File npOutput = generateReports.npOutput
@@ -18,14 +16,14 @@ workflow nanoplot {
 task generateReports {
     input {
         String? NanoPlot = "NanoPlot"
-        String fastqFilePath
-        String outputPath = "./output"
+        String summaryFilePath
+        String? outputPath = "./output"
         String? modules = "nanoplot/1.27.0"
         Int? memory = 16
     }
 
     command <<<
-        ~{NanoPlot} --fastq ~{fastqFilePath} -o ~{outputPath}
+        ~{NanoPlot} --summary ~{summaryFilePath} -o ~{outputPath}
         zip -r npOutput.zip output
     >>>
 

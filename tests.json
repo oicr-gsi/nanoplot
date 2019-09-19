@@ -16,8 +16,7 @@
       "id": "nanoplotTest",
       "parameters": {
         "wdl_inputs": {
-          "nanoplot.fastqFilePath": "/.mounts/labs/gsiprojects/gsi/ONT_PIPE/output/fastq_runid_fffed01d190f277f93f23e0d7051ae69bc971cd7_0.fastq",
-          "nanoplot.outputPath" : "/.mounts/labs/gsiprojects/gsi/ONT_PIPE/nanoplot_output"
+          "nanoplot.summaryFilePath": "/.mounts/labs/gsiprojects/gsi/ONT_PIPE/output/sequencing_summary.txt"
         }
       }
     }
