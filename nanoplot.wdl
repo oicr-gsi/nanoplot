@@ -28,7 +28,7 @@ task generateReports {
     >>>
 
     output {
-        File npOutput = "./npOutput.zip"
+        File npOutput = "npOutput.zip"
     }
     runtime {
         modules: "~{modules}"
