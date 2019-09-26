@@ -2,11 +2,11 @@ version 1.0
 
 workflow nanoplot {
     input {
-        String summaryFilePath
+        File summaryFile
     }
     call generateReports {
         input:
-            summaryFilePath = summaryFilePath,
+            summaryFile = summaryFile,
     }
     output {
         File npOutput = generateReports.npOutput
@@ -16,14 +16,14 @@ workflow nanoplot {
 task generateReports {
     input {
         String? NanoPlot = "NanoPlot"
-        String summaryFilePath
+        File summaryFile
         String? outputPath = "./output"
         String? modules = "nanoplot/1.27.0"
         Int? memory = 16
     }
 
     command <<<
-        ~{NanoPlot} --summary ~{summaryFilePath} -o ~{outputPath}
+        ~{NanoPlot} --summary ~{summaryFile} -o ~{outputPath}
         zip -r npOutput.zip output
     >>>
 
