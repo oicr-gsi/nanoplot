@@ -15,7 +15,7 @@ workflow nanoplot {
 
 task generateReports {
     input {
-        String? NanoPlot = "NanoPlot"
+        String? nanoplot = "NanoPlot"
         File summaryFile
         String? outputPath = "./output"
         String? modules = "nanoplot/1.27.0"
@@ -23,7 +23,7 @@ task generateReports {
     }
 
     command <<<
-        ~{NanoPlot} --summary ~{summaryFile} -o ~{outputPath}
+        ~{nanoplot} --summary ~{summaryFile} -o ~{outputPath}
         zip -r npOutput.zip output
     >>>
 
