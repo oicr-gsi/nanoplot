@@ -22,6 +22,7 @@ java -jar cromwell.jar run nanoplot.wdl --inputs inputs.json
 Parameter|Value|Description
 ---|---|---
 `summaryFile`|File|Input summary file path produced by guppy
+`outputFileNamePrefix`|String|Variable used to set the outputfile name
 
 
 #### Optional workflow parameters:

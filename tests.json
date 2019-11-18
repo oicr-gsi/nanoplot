@@ -16,7 +16,8 @@
       "id": "nanoplotTest",
       "parameters": {
         "wdl_inputs": {
-          "nanoplot.summaryFile": "/.mounts/labs/gsi/testdata/nanoplot/input_data/sequencing_summary.txt"
+          "nanoplot.summaryFile": "/.mounts/labs/gsi/testdata/nanoplot/input_data/sequencing_summary.txt",
+          "nanoplot.outputFileNamePrefix" : "ID_HERE"
         }
       }
     }
