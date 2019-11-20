@@ -3,11 +3,13 @@ version 1.0
 workflow nanoplot {
     input {
         File summaryFile
-        String outputFileNamePrefix
+        String outputFileNamePrefix = basename(summaryFile, ".txt")
+        String? additionalParameters
     }
     parameter_meta {
         summaryFile: "Input summary file path produced by guppy"
         outputFileNamePrefix: "Variable used to set the outputfile name"
+        additionalParameters: "Additional parameters to be added to the nanoplot command"
     }
 
     meta {
@@ -22,7 +24,8 @@ workflow nanoplot {
     call generateReports {
         input:
             summaryFile = summaryFile,
-            outputFileNamePrefix = outputFileNamePrefix
+            outputFileNamePrefix = outputFileNamePrefix,
+            additionalParameters = additionalParameters
     }
     output {
         File npOutput = generateReports.npOutput
@@ -31,15 +34,17 @@ workflow nanoplot {
 
 task generateReports {
     input {
-        String? nanoplot = "NanoPlot"
+        String nanoplot = "NanoPlot"
+        String? additionalParameters
         String outputFileNamePrefix
         File summaryFile
-        String? outputPath = "./output"
-        String? modules = "nanoplot/1.27.0"
-        Int? memory = 16
+        String outputPath = "./output"
+        String modules = "nanoplot/1.27.0"
+        Int memory = 16
     }
     parameter_meta {
         nanoplot: "NanoPlot module name to use."
+        additionalParameters: "Additional parameters to be added to the nanoplot command"
         summaryFile: "Input summary file path produced by guppy"
         outputPath: "The output directory of the files in nanoplot"
         modules: "Environment module names and version to load (space separated) before command execution."
@@ -53,7 +58,7 @@ task generateReports {
     }
 
     command <<<
-        ~{nanoplot} --summary ~{summaryFile} -o ~{outputPath}
+        ~{nanoplot} --summary ~{summaryFile} -o ~{outputPath} ~{additionalParameters}
         zip -r ~{outputFileNamePrefix}_nanoreport.zip output
     >>>
 
