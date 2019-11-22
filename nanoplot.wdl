@@ -59,11 +59,11 @@ task generateReports {
 
     command <<<
         ~{nanoplot} --summary ~{summaryFile} -o ~{outputPath} ~{additionalParameters}
-        zip -r ~{outputFileNamePrefix}_nanoreport.zip output
+        zip -r ~{outputFileNamePrefix}_nanoplot.zip output
     >>>
 
     output {
-        File npOutput = "~{outputFileNamePrefix}_nanoreport.zip"
+        File npOutput = "~{outputFileNamePrefix}_nanoplot.zip"
     }
     runtime {
         modules: "~{modules}"
