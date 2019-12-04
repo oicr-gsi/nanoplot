@@ -59,7 +59,7 @@ task generateReports {
 
     command <<<
         ~{nanoplot} --summary ~{summaryFile} -o ~{outputPath} ~{additionalParameters}
-        zip -r ~{outputFileNamePrefix}_nanoplot.zip output
+        zip -r ~{outputFileNamePrefix}_nanoplot.zip ~{outputPath}
     >>>
 
     output {
