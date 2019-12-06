@@ -14,7 +14,6 @@ workflow nanoplot {
 
     meta {
         author: "Matthew Wong"
-        email: "m2wong@oicr.on.ca"
         description: "Workflow to run Nanoplot (Plotting tool for long read sequencing data and alignments)"
         dependencies: [{
             name: "NanoPlot",
