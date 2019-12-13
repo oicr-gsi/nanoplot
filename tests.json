@@ -1,0 +1,33 @@
+{
+  "defaults": {
+    "description": "nanoplot workflow test",
+    "metrics_calculate": "calculate.sh",
+    "metrics_compare": "compare.sh",
+    "output_metrics_dir": "/.mounts/labs/gsi/testdata/nanoplot/output_metrics",
+    "parameters": {
+      "wdl_options": {
+        "write_to_cache": false,
+        "read_from_cache": false
+      }
+    }
+  },
+  "tests": [
+    {
+      "id": "nanoplotTest",
+      "parameters": {
+        "wdl_inputs": {
+          "nanoplot.summaryFile": "/.mounts/labs/gsi/testdata/nanoplot/input_data/sequencing_summary.txt",
+          "nanoplot.outputFileNamePrefix" : "ID_HERE"
+        }
+      }
+    },
+    {
+      "id": "nanoplotEmptyOutputFileNamePrefixTest",
+      "parameters": {
+        "wdl_inputs": {
+          "nanoplot.summaryFile": "/.mounts/labs/gsi/testdata/nanoplot/input_data/sequencing_summary.txt"
+        }
+      }
+    }
+  ]
+}
