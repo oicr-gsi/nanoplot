@@ -1,0 +1,88 @@
+[
+    {
+        "arguments": {
+            "nanoplot.additionalParameters": null,
+            "nanoplot.generateReports.memory": null,
+            "nanoplot.generateReports.modules": null,
+            "nanoplot.generateReports.nanoplot": null,
+            "nanoplot.generateReports.outputPath": null,
+            "nanoplot.outputFileNamePrefix": "ID_HERE",
+            "nanoplot.summaryFile": {
+                "contents": {
+                    "configuration": "/.mounts/labs/gsi/testdata/nanoplot/input_data/sequencing_summary.txt",
+                    "externalIds": [
+                        {
+                            "id": "TEST",
+                            "provider": "TEST"
+                        }
+                    ]
+                },
+                "type": "EXTERNAL"
+            }
+        },
+        "description": "nanoplot workflow test",
+        "engineArguments": {},
+        "id": "nanoplotTest",
+        "metadata": {
+            "nanoplot.npOutput": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_nanoplot_nanoplotTest_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            }
+        },
+        "validators": [
+            {
+                "metrics_calculate": "@CHECKOUT@/./calculate.sh",
+                "metrics_compare": "@CHECKOUT@/./compare.sh",
+                "output_metrics": "/.mounts/labs/gsi/testdata/nanoplot/output_metrics/nanoplotTest.metrics",
+                "type": "script"
+            }
+        ]
+    },
+    {
+        "arguments": {
+            "nanoplot.additionalParameters": null,
+            "nanoplot.generateReports.memory": null,
+            "nanoplot.generateReports.modules": null,
+            "nanoplot.generateReports.nanoplot": null,
+            "nanoplot.generateReports.outputPath": null,
+            "nanoplot.outputFileNamePrefix": null,
+            "nanoplot.summaryFile": {
+                "contents": {
+                    "configuration": "/.mounts/labs/gsi/testdata/nanoplot/input_data/sequencing_summary.txt",
+                    "externalIds": [
+                        {
+                            "id": "TEST",
+                            "provider": "TEST"
+                        }
+                    ]
+                },
+                "type": "EXTERNAL"
+            }
+        },
+        "description": "nanoplot workflow test",
+        "engineArguments": {},
+        "id": "nanoplotEmptyOutputFileNamePrefixTest",
+        "metadata": {
+            "nanoplot.npOutput": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_nanoplot_nanoplotEmptyOutputFileNamePrefixTest_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            }
+        },
+        "validators": [
+            {
+                "metrics_calculate": "@CHECKOUT@/./calculate.sh",
+                "metrics_compare": "@CHECKOUT@/./compare.sh",
+                "output_metrics": "/.mounts/labs/gsi/testdata/nanoplot/output_metrics/nanoplotEmptyOutputFileNamePrefixTest.metrics",
+                "type": "script"
+            }
+        ]
+    }
+]
