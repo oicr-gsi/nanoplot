@@ -1,0 +1,6 @@
+{
+    "names": [
+        "nanoplot"
+    ],
+    "wdl": "nanoplot.wdl"
+}
