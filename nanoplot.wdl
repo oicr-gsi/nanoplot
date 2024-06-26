@@ -19,6 +19,12 @@ workflow nanoplot {
             name: "NanoPlot",
             url: "https://github.com/wdecoster/NanoPlot"
         }]
+        output_meta: {
+          npOutput: {
+            description: "zipped output folder of nanoplot data.",
+            vidarr_label: "npOutput"
+          }
+        }
     }
     call generateReports {
         input:

@@ -1,0 +1,11 @@
+## Commands
+
+This section lists command(s) run by nanoplot workflow
+
+* Running nanoplot
+
+```
+    nanoplot --summary SUMMARY_FILE -o OTPUT_PATH ADDITIONAL_PARAMETERS
+    zip -r OUTPUT_PREFIX_nanoplot.zip OUTPUT_PATH
+```
+
