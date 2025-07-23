@@ -9,7 +9,7 @@
             "nanoplot.outputFileNamePrefix": "ID_HERE",
             "nanoplot.summaryFile": {
                 "contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/nanoplot/input_data/sequencing_summary.txt",
+                    "configuration": "/.mounts/labs/gsi/testdata/nanoplot/test_inputs/sequencing_summary.txt",
                     "externalIds": [
                         {
                             "id": "TEST",
@@ -37,7 +37,7 @@
             {
                 "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
                 "metrics_compare": "@CHECKOUT@/tests/compare.sh",
-                "output_metrics": "/.mounts/labs/gsi/testdata/nanoplot/output_metrics/nanoplotTest.metrics",
+                "output_metrics": "/.mounts/labs/gsi/testdata/nanoplot/output_metrics/workflow_test_01.metrics",
                 "type": "script"
             }
         ]
@@ -52,7 +52,7 @@
             "nanoplot.outputFileNamePrefix": null,
             "nanoplot.summaryFile": {
                 "contents": {
-                    "configuration": "/.mounts/labs/gsi/testdata/nanoplot/input_data/sequencing_summary.txt",
+                    "configuration": "/.mounts/labs/gsi/testdata/nanoplot/test_inputs/sequencing_summary.txt",
                     "externalIds": [
                         {
                             "id": "TEST",
@@ -80,7 +80,7 @@
             {
                 "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
                 "metrics_compare": "@CHECKOUT@/tests/compare.sh",
-                "output_metrics": "/.mounts/labs/gsi/testdata/nanoplot/output_metrics/nanoplotEmptyOutputFileNamePrefixTest.metrics",
+                "output_metrics": "/.mounts/labs/gsi/testdata/nanoplot/output_metrics/workflow_test_02.metrics",
                 "type": "script"
             }
         ]
