@@ -21,7 +21,10 @@
             }
         },
         "description": "nanoplot workflow test",
-        "engineArguments": {},
+        "engineArguments": {
+           "write_to_cache": false,
+           "read_from_cache": false
+        },
         "id": "nanoplotTest",
         "metadata": {
             "nanoplot.npOutput": {
@@ -64,7 +67,10 @@
             }
         },
         "description": "nanoplot workflow test",
-        "engineArguments": {},
+        "engineArguments": {
+           "write_to_cache": false,
+           "read_from_cache": false
+        },
         "id": "nanoplotEmptyOutputFileNamePrefixTest",
         "metadata": {
             "nanoplot.npOutput": {
